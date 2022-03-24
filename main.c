@@ -39,91 +39,118 @@ int main()
         {
             case 1:
             {
+                //Cargar desde el teclado una pila DADA con 5 elementos.
+                //Pasar los tres primeros elementos que se encuentren en el tope a la pila AUX1 y los restantes a la pila AUX2, ambas pilas inicializadas.
 
             }
             break;
             case 2:
             {
+                //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
+                //Pasar todos los elementos de la pila ORIGEN a la pila DESTINO.
 
             }
             break;
             case 3:
             {
-
+                //Cargar desde teclado una pila DADA y pasar a la pila DISTINTOS todos aquellos elementos distintos al valor 8.
             }
             break;
             case 4:
             {
-
+                //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
+                //Pasar los elementos de la pila ORIGEN a la pila DESTINO, pero dejándolos en el mismo orden.
             }
             break;
             case 5:
             {
-
+                //Cargar desde el teclado la pila DADA.
+                //Invertir la pila de manera que DADA contenga los elementos cargados originalmente en ella, pero en orden inverso.
             }
             break;
             case 6:
             {
-
+                //Pasar el primer elemento (tope) de la pila DADA a su última posición (base), dejando los restantes elementos en el mismo orden.
             }
             break;
             case 7:
             {
-
+                //Pasar el último elemento (base) de la pila DADA a su primera posición (tope), dejando los restantes elementos en el mismo orden.
             }
             break;
             case 8:
             {
-
+                //Repartir los elementos de la pila MAZO en las pilas JUGADOR1 y JUGADOR2 en forma alternativa.
             }
             break;
             case 9:
             {
-
+                //Comparar la cantidad de elementos de las pilas A y B. Mostrar por pantalla el resultado.
             }
             break;
             case 10:
             {
-
+                //Comparar las pilas A y B, evaluando si son completamente iguales (en cantidad de elementos, valores que contienen y posición de los mismos).
+                //Mostrar por pantalla el resultado.
             }
             break;
             case 11:
             {
-
+                //Suponiendo la existencia de una pila MODELO que no esté vacía, eliminar de la pila DADA todos los elementos que sean iguales al tope de la pila MODELO.
             }
             break;
             case 12:
             {
-
+                //Suponiendo la existencia de una pila MODELO (vacía o no), eliminar de la pila DADA todos los elementos que existan en MODELO.
             }
             break;
             case 13:
             {
-
+                //Suponiendo la existencia de una pila LÍMITE, pasar los elementos de la pila DADA que sean mayores o iguales que el tope de LIMITE a la pila MAYORES, y los elementos que sean menores a la pila MENORES.
             }
             break;
             case 14:
             {
-
+                //Determinar si la cantidad de elementos de la pila DADA es par. Si es par, pasar el elemento del tope de la pila AUX a la pila PAR y si es impar pasar el tope a la pila IMPAR.
             }
             break;
             case 15:
             {
+                //¿Cuál es la condición del siguiente ciclo? ¿Cuándo finaliza el ciclo? (Pila1, Pila2, y Descarte son pilas):
 
+                //IMAGEN
             }
             break;
             case 16:
             {
-
+                //¿Que realiza el siguiente código escrito en lenguaje C (Pila1, Aux y Result son pilas):
+                //IMAGEN
             }
             break;
             case 17:
             {
+                //Para el ejercicio “Cargar por teclado una pila ORIGEN y pasar a la pila DISTINTO todos aquellos elementos que preceden al valor 5 (elementos entre el tope y el valor 5).
+                //No se asegura que exista algún valor 5”, se realizó el siguiente programa:
+
+                // este programa carga por teclado una pila Origen y pasa a la pila Destino todos aquellos elementos que preceden el valor 5
+
+                //IMAGEN
+
+                //a. ¿Resuelve el problema planteado?
+                //b. ¿Cuáles son los errores que encuentra?
+                //c. Reescribir el código para que resuelva adecuadamente el problema planteado.
+                //d. Indicar los componentes del programa.
 
             }
             break;
             case 18:
             {
+                //Dado el siguiente ciclo (Pila1, Pila2 y Descarte son pilas):
+
+                //IMAGEN
+
+                //a. ¿Cuál es la condición del ciclo? Explique con sus palabras
+                //b. ¿Cuales son los posibles estados de ambas pilas al finalizar el ciclo?
 
             }
             break;
@@ -131,6 +158,6 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.0\n");
+    printf("\nVersion 1.1\n");
     return 0;
 }

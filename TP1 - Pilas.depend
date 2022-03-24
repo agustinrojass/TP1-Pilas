@@ -1,5 +1,13 @@
 # depslib dependency file v1.0
-1648092681 source:c:\users\usuario\documents\utn\2022\1er cuatrimestre\programación\archivos c\tp1 - pilas\main.c
+1648160216 source:c:\users\usuario\documents\utn\2022\1er cuatrimestre\programación\archivos c\tp1 - pilas\main.c
 	<stdio.h>
 	<stdlib.h>
+	"pila.h"
+
+1490112217 source:c:\users\usuario\documents\utn\2022\1er cuatrimestre\programación\archivos c\tp1 - pilas\pila.c
+	"pila.h"
+
+1490112217 c:\users\usuario\documents\utn\2022\1er cuatrimestre\programación\archivos c\tp1 - pilas\pila.h
+	<stdio.h>
+	<malloc.h>
 

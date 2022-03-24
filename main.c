@@ -1,10 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "pila.h"
 
-int ps();
-int pcss();
-int pcsc();
-int pcr();
 int main()
 {
     int ejercicio;
@@ -39,18 +36,51 @@ int main()
         {
             case 1:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde el teclado una pila DADA con 5 elementos.
                 //Pasar los tres primeros elementos que se encuentren en el tope a la pila AUX1 y los restantes a la pila AUX2, ambas pilas inicializadas.
-
+                Pila pila1;
+                inicpila(&pila1);
+                leer(&pila1);
+                leer(&pila1);
+                leer(&pila1);
+                leer(&pila1);
+                leer(&pila1);
+                Pila aux1;
+                inicpila(&aux1);
+                apilar(&aux1,desapilar(&pila1));
+                apilar(&aux1,desapilar(&pila1));
+                apilar(&aux1,desapilar(&pila1));
+                mostrar(&aux1);
+                Pila aux2;
+                inicpila(&aux2);
+                apilar(&aux2,desapilar(&pila1));
+                apilar(&aux2,desapilar(&pila1));
+                mostrar(&aux2);
             }
             break;
             case 2:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
                 //Pasar todos los elementos de la pila ORIGEN a la pila DESTINO.
-
+                int i2,j2,largo2;
+                Pila origen2;
+                inicpila(&origen2);
+                Pila destino2;
+                inicpila(&destino2);
+                printf("Ingrese cuantos elementos desea cargar: ");
+                scanf("%i",&largo2);
+                for(i2=0;i2<largo2;i2++)
+                {
+                    leer(&origen2);
+                }
+                mostrar(&origen2);
+                for(j2=0;j2<largo2;j2++)
+                {
+                    apilar(&destino2,desapilar(&origen2));
+                }
+                mostrar(&destino2);
             }
             break;
             case 3:
@@ -176,6 +206,6 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.2\n");
+    printf("\nVersion 1.3\n");
     return 0;
 }

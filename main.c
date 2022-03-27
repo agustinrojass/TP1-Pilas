@@ -39,24 +39,24 @@ int main()
                 printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde el teclado una pila DADA con 5 elementos.
                 //Pasar los tres primeros elementos que se encuentren en el tope a la pila AUX1 y los restantes a la pila AUX2, ambas pilas inicializadas.
-                Pila pila1;
-                inicpila(&pila1);
-                leer(&pila1);
-                leer(&pila1);
-                leer(&pila1);
-                leer(&pila1);
-                leer(&pila1);
-                Pila aux1;
-                inicpila(&aux1);
-                apilar(&aux1,desapilar(&pila1));
-                apilar(&aux1,desapilar(&pila1));
-                apilar(&aux1,desapilar(&pila1));
-                mostrar(&aux1);
-                Pila aux2;
-                inicpila(&aux2);
-                apilar(&aux2,desapilar(&pila1));
-                apilar(&aux2,desapilar(&pila1));
-                mostrar(&aux2);
+                Pila dada1;
+                inicpila(&dada1);
+                leer(&dada1);
+                leer(&dada1);
+                leer(&dada1);
+                leer(&dada1);
+                leer(&dada1);
+                Pila aux11;
+                inicpila(&aux11);
+                apilar(&aux11,desapilar(&dada1));
+                apilar(&aux11,desapilar(&dada1));
+                apilar(&aux11,desapilar(&dada1));
+                mostrar(&aux11);
+                Pila aux21;
+                inicpila(&aux21);
+                apilar(&aux21,desapilar(&dada1));
+                apilar(&aux21,desapilar(&dada1));
+                mostrar(&aux21);
             }
             break;
             case 2:
@@ -64,19 +64,20 @@ int main()
                 printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
                 //Pasar todos los elementos de la pila ORIGEN a la pila DESTINO.
-                int i2,j2,largo2;
+                int continuar2;
                 Pila origen2;
                 inicpila(&origen2);
                 Pila destino2;
                 inicpila(&destino2);
-                printf("Ingrese cuantos elementos desea cargar: ");
-                scanf("%i",&largo2);
-                for(i2=0;i2<largo2;i2++)
+                do
                 {
                     leer(&origen2);
+                    printf("Desea continuar?\n1 = SI\n0 = NO\n");
+                    scanf("%i",&continuar2);
                 }
+                while(continuar2!=0);
                 mostrar(&origen2);
-                for(j2=0;j2<largo2;j2++)
+                while(!pilavacia(&origen2))
                 {
                     apilar(&destino2,desapilar(&origen2));
                 }
@@ -85,22 +86,80 @@ int main()
             break;
             case 3:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde teclado una pila DADA y pasar a la pila DISTINTOS todos aquellos elementos distintos al valor 8.
+                int continuar3;
+                Pila dada3;
+                inicpila(&dada3);
+                Pila distintos3;
+                inicpila(&distintos3);
+                do
+                {
+                    leer(&dada3);
+                    if(tope(&dada3)!=8)
+                    {
+                        apilar(&distintos3,tope(&dada3));
+                    }
+                    printf("\nDesea continuar?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar3);
+                    printf("\n");
+                }
+                while(continuar3!=0);
+                printf("\nLa pila cargada por el usuario es: \n");
+                mostrar(&dada3);
+                printf("La pila cargada por el usuario sin los 8s es: \n");
+                mostrar(&distintos3);
             }
             break;
             case 4:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
                 //Pasar los elementos de la pila ORIGEN a la pila DESTINO, pero dejándolos en el mismo orden.
+                int continuar4;
+                Pila origen4;
+                inicpila(&origen4);
+                Pila destino4;
+                inicpila(&destino4);
+                do
+                {
+                    leer(&origen4);
+                    apilar(&destino4,tope(&origen4));
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar4);
+                    printf("\n");
+                }
+                while(continuar4!=0);
+                printf("\nLa pila cargada por el usuario es: \n");
+                mostrar(&origen4);
+                printf("La copia de la pila cargada por el usuario es: \n");
+                mostrar(&destino4);
             }
             break;
             case 5:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Cargar desde el teclado la pila DADA.
                 //Invertir la pila de manera que DADA contenga los elementos cargados originalmente en ella, pero en orden inverso.
+                int continuar5;
+                Pila dada5;
+                inicpila(&dada5);
+                Pila aux5;
+                inicpila(&aux5);
+                do
+                {
+                    leer(&dada5);
+                    apilar(&aux5,desapilar(&dada5));
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar5);
+                    printf("\n");
+                }
+                while(continuar5!=0);
+                while(!pilavacia(&aux5))
+                {
+                    apilar(&dada5,desapilar(&aux5));
+                }
+                mostrar(&dada5);
             }
             break;
             case 6:
@@ -206,6 +265,6 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.3\n");
+    printf("\nVersion 1.4\n");
     return 0;
 }

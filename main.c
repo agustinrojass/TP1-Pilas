@@ -164,57 +164,428 @@ int main()
             break;
             case 6:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Pasar el primer elemento (tope) de la pila DADA a su última posición (base), dejando los restantes elementos en el mismo orden.
+                int continuar6;
+                Pila dada6;
+                inicpila(&dada6);
+                Pila aux16;
+                inicpila(&aux16);
+                Pila aux26;
+                inicpila(&aux26);
+                do
+                {
+                    leer(&dada6);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar6);
+                    printf("\n");
+                }
+                while(continuar6!=0);
+                mostrar(&dada6);
+                apilar(&aux16,desapilar(&dada6));
+                while(!pilavacia(&dada6))
+                {
+                    apilar(&aux26,desapilar(&dada6));
+                }
+                apilar(&dada6,desapilar(&aux16));
+                while(!pilavacia(&aux26))
+                {
+                    apilar(&dada6,desapilar(&aux26));
+                }
+                mostrar(&dada6);
             }
             break;
             case 7:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Pasar el último elemento (base) de la pila DADA a su primera posición (tope), dejando los restantes elementos en el mismo orden.
+                int continuar7;
+                Pila dada7;
+                inicpila(&dada7);
+                Pila aux17;
+                inicpila(&aux17);
+                Pila aux27;
+                inicpila(&aux27);
+                do
+                {
+                    leer(&dada7);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar7);
+                    printf("\n");
+                }
+                while(continuar7!=0);
+                mostrar(&dada7);
+                while(!pilavacia(&dada7))
+                {
+                    apilar(&aux17,desapilar(&dada7));
+                }
+                apilar(&aux27,desapilar(&aux17));
+                while(!pilavacia(&aux17))
+                {
+                    apilar(&dada7,desapilar(&aux17));
+                }
+                apilar(&dada7,desapilar(&aux27));
+                mostrar(&dada7);
             }
             break;
+            //PREGUNTAR
             case 8:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Repartir los elementos de la pila MAZO en las pilas JUGADOR1 y JUGADOR2 en forma alternativa.
+
+                Pila mazo8;
+                inicpila(&mazo8);
+
+                Pila jugador18;
+                inicpila(&jugador18);
+
+                Pila jugador28;
+                inicpila(&jugador28);
+
+                int i8;
+
+                apilar(&mazo8,1);
+                apilar(&mazo8,2);
+                apilar(&mazo8,3);
+                apilar(&mazo8,4);
+                apilar(&mazo8,5);
+                apilar(&mazo8,6);
+                apilar(&mazo8,7);
+                apilar(&mazo8,8);
+                apilar(&mazo8,9);
+                apilar(&mazo8,10);
+
+
+                /*for(i8=1;i8<11;i8++)
+                {
+
+                    apilar(&mazo8,&i8);
+                }
+                mostrar(&mazo8);
+
+                /*do
+                {
+                    apilar(&mazo8,i8);
+                    i8=i8++;
+                }
+                while(i8<11);*/
+
+
+
+                while(!pilavacia(&mazo8))
+                {
+                    apilar(&jugador18,desapilar(&mazo8));
+                    apilar(&jugador28,desapilar(&mazo8));
+                }
+                mostrar(&jugador18);
+                mostrar(&jugador28);
+
+
+
             }
             break;
             case 9:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Comparar la cantidad de elementos de las pilas A y B. Mostrar por pantalla el resultado.
+                int continuarA9,continuarB9;
+                Pila pilaA9;
+                inicpila(&pilaA9);
+                Pila pilaB9;
+                inicpila(&pilaB9);
+                do
+                {
+                    leer(&pilaA9);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuarA9);
+                    printf("\n");
+                }
+                while(continuarA9!=0);
+                do
+                {
+                    leer(&pilaB9);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuarB9);
+                    printf("\n");
+                }
+                while(continuarB9!=0);
+        mostrar(&pilaA9);
+        mostrar(&pilaB9);
+                while(!pilavacia(&pilaA9)&&!pilavacia(&pilaB9))
+                {
+                    desapilar(&pilaA9);
+                    desapilar(&pilaB9);
+        mostrar(&pilaA9);
+        mostrar(&pilaB9);
+                }
+                if(!pilavacia(&pilaA9))
+                {
+                    printf("La pila A tiene mas elementos\n");
+                }
+                else
+                {
+                    if(!pilavacia(&pilaB9))
+                    {
+                        printf("La pila B tiene mas elementos\n");
+                    }
+                    else
+                    {
+                        printf("Las pilas tienen la misma cantidad de elementos\n");
+                    }
+                }
             }
             break;
             case 10:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Comparar las pilas A y B, evaluando si son completamente iguales (en cantidad de elementos, valores que contienen y posición de los mismos).
                 //Mostrar por pantalla el resultado.
+                int continuarA10,continuarB10;
+                Pila pilaA10;
+                inicpila(&pilaA10);
+                Pila pilaB10;
+                inicpila(&pilaB10);
+                do
+                {
+                    leer(&pilaA10);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuarA10);
+                    printf("\n");
+                }
+                while(continuarA10!=0);
+                do
+                {
+                    leer(&pilaB10);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuarB10);
+                    printf("\n");
+                }
+                while(continuarB10!=0);
+                while((tope(&pilaA10)==tope(&pilaB10))&&!pilavacia(&pilaA10)&&!pilavacia(&pilaB10))
+                {
+                    desapilar(&pilaA10);
+                    desapilar(&pilaB10);
+                }
+
+                if(!pilavacia(&pilaA10)||!pilavacia(&pilaB10))
+                {
+                    printf("Las pilas no son iguales\n");
+                }
+                else
+                {
+                    printf("Las pilas son iguales\n");
+                }
             }
             break;
             case 11:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Suponiendo la existencia de una pila MODELO que no esté vacía, eliminar de la pila DADA todos los elementos que sean iguales al tope de la pila MODELO.
+                int continuar11,tope11;
+                Pila modelo11;
+                inicpila(&modelo11);
+                Pila dada11;
+                inicpila(&dada11);
+                Pila aux_11;
+                inicpila(&aux_11);
+                printf("Ingrese el valor del tope de la pila modelo: ");
+                scanf("%i",&tope11);
+                printf("\n");
+                apilar(&modelo11,tope11);
+                do
+                {
+                    leer(&dada11);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar11);
+                    printf("\n");
+                }
+                while(continuar11!=0);
+                printf("El tope de la pila modelo es: %i\n",tope(&modelo11));
+                mostrar(&dada11);
+                while(!pilavacia(&dada11))
+                {
+                    if(tope(&dada11)==tope(&modelo11))
+                    {
+                        desapilar(&dada11);
+                    }
+                    else
+                    {
+                        apilar(&aux_11,desapilar(&dada11));
+                    }
+                }
+                while(!pilavacia(&aux_11))
+                {
+                    apilar(&dada11,desapilar(&aux_11));
+                }
+                mostrar(&dada11);
             }
             break;
             case 12:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Suponiendo la existencia de una pila MODELO (vacía o no), eliminar de la pila DADA todos los elementos que existan en MODELO.
+                int continuar12,continuar22;
+                Pila modelo12;
+                inicpila(&modelo12);
+                Pila dada12;
+                inicpila(&dada12);
+                Pila aux_12;
+                inicpila(&aux_12);
+                Pila modeloAux12;
+                inicpila(&modeloAux12);
+                printf("Ingrese valores sin repetir para la pila modelo:\n\n");
+                do
+                {
+                    leer(&modelo12);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar22);
+                    printf("\n");
+                }
+                while(continuar22!=0);
+                printf("Ingrese los valores de la pila dada:\n\n");
+                do
+                {
+                    leer(&dada12);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar12);
+                    printf("\n");
+                }
+                while(continuar12!=0);
+                printf("La pila dada es:\n");
+                mostrar(&dada12);
+                while(!pilavacia(&dada12))
+                {
+                    while(!pilavacia(&modelo12))
+                    {
+                        if(tope(&dada12)==tope(&modelo12))
+                        {
+                            desapilar(&dada12);
+                        }
+                        apilar(&modeloAux12,desapilar(&modelo12));
+                    }
+                    while(!pilavacia(&modeloAux12))
+                    {
+                        apilar(&modelo12,desapilar(&modeloAux12));
+                    }
+                    apilar(&aux_12,desapilar(&dada12));
+                }
+                while(!pilavacia(&aux_12))
+                {
+                    apilar(&dada12,desapilar(&aux_12));
+                }
+                printf("La pila dada sin los elementos de la pila modelo es:\n");
+                mostrar(&dada12);
             }
             break;
             case 13:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Suponiendo la existencia de una pila LÍMITE, pasar los elementos de la pila DADA que sean mayores o iguales que el tope de LIMITE a la pila MAYORES, y los elementos que sean menores a la pila MENORES.
+                int continuar13,tope13;
+                Pila dada13;
+                inicpila(&dada13);
+                Pila limite13;
+                inicpila(&limite13);
+                Pila mayores13;
+                inicpila(&mayores13);
+                Pila menores13;
+                inicpila(&menores13);
+                Pila mayoresAux13;
+                inicpila(&mayoresAux13);
+                Pila menoresAux13;
+                inicpila(&menoresAux13);
+                printf("Ingrese el valor del tope de la pila limite: ");
+                scanf("%i",&tope13);
+                printf("\n");
+                apilar(&limite13,tope13);
+                do
+                {
+                    leer(&dada13);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar13);
+                    printf("\n");
+                }
+                while(continuar13!=0);
+                printf("El tope de la pila limite es: %i\n",tope(&limite13));
+                mostrar(&dada13);
+                while(!pilavacia(&dada13))
+                {
+                    if(tope(&dada13)<tope(&limite13))
+                    {
+                        apilar(&menoresAux13,desapilar(&dada13));
+                    }
+                    else
+                    {
+                        apilar(&mayoresAux13,desapilar(&dada13));
+                    }
+                }
+                while(!pilavacia(&menoresAux13))
+                {
+                    apilar(&menores13,desapilar(&menoresAux13));
+                }
+                while(!pilavacia(&mayoresAux13))
+                {
+                    apilar(&mayores13,desapilar(&mayoresAux13));
+                }
+                printf("La pila mayores es:\n");
+                mostrar(&mayores13);
+                printf("La pila menores es:\n");
+                mostrar(&menores13);
             }
             break;
             case 14:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Determinar si la cantidad de elementos de la pila DADA es par. Si es par, pasar el elemento del tope de la pila AUX a la pila PAR y si es impar pasar el tope a la pila IMPAR.
+                int continuar14,par;
+                Pila dada14;
+                inicpila(&dada14);
+                Pila aux14;
+                inicpila(&aux14);
+                Pila tope14;
+                inicpila(&tope14);
+                Pila par14;
+                inicpila(&par14);
+                Pila impar14;
+                inicpila(&impar14);
+                apilar(&tope14,987);
+                do
+                {
+                    leer(&dada14);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar14);
+                    printf("\n");
+                }
+                while(continuar14!=0);
+                while(!pilavacia(&dada14))
+                {
+                    if(tope(&aux14)==tope(&tope14))
+                    {
+                        par=1;
+                        apilar(&aux14,desapilar(&dada14));
+                    }
+                    else
+                    {
+                        par=0;
+                        apilar(&aux14,desapilar(&dada14));
+                        apilar(&tope14,tope(&dada14));
+                    }
+                }
+                if(par==1)
+                {
+                    printf("La pila dada es par\n");
+                    apilar(&par14,tope(&aux14));
+                    printf("\nLa pila par es:\n");
+                    mostrar(&par14);
+                }
+                else
+                {
+                    printf("La pila dada es impar\n");
+                    apilar(&impar14,tope(&aux14));
+                    printf("\nLa pila impar es:\n");
+                    mostrar(&impar14);
+                }
             }
             break;
             case 15:
@@ -223,7 +594,7 @@ int main()
                 //¿Cuál es la condición del siguiente ciclo? ¿Cuándo finaliza el ciclo? (Pila1, Pila2, y Descarte son pilas):
 
                 //IMAGEN
-            }
+       }
             break;
             case 16:
             {
@@ -265,6 +636,6 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.4\n");
+    printf("\nVersion 1.5\n");
     return 0;
 }

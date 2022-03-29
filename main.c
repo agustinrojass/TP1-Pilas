@@ -144,20 +144,30 @@ int main()
                 int continuar5;
                 Pila dada5;
                 inicpila(&dada5);
-                Pila aux5;
-                inicpila(&aux5);
+                Pila aux1_5;
+                inicpila(&aux1_5);
+                Pila aux2_5;
+                inicpila(&aux2_5);
                 do
                 {
                     leer(&dada5);
-                    apilar(&aux5,desapilar(&dada5));
                     printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
                     scanf("%i",&continuar5);
                     printf("\n");
                 }
                 while(continuar5!=0);
-                while(!pilavacia(&aux5))
+                mostrar(&dada5);
+                while(!pilavacia(&dada5))
                 {
-                    apilar(&dada5,desapilar(&aux5));
+                    apilar(&aux1_5,desapilar(&dada5));
+                }
+                while(!pilavacia(&aux1_5))
+                {
+                    apilar(&aux2_5,desapilar(&aux1_5));
+                }
+                while(!pilavacia(&aux2_5))
+                {
+                    apilar(&dada5,desapilar(&aux2_5));
                 }
                 mostrar(&dada5);
             }
@@ -228,61 +238,39 @@ int main()
                 mostrar(&dada7);
             }
             break;
-            //PREGUNTAR
             case 8:
             {
                 printf("\nEJERCICIO %i\n\n",ejercicio);
                 //Repartir los elementos de la pila MAZO en las pilas JUGADOR1 y JUGADOR2 en forma alternativa.
-
+                int continuar8;
                 Pila mazo8;
                 inicpila(&mazo8);
-
                 Pila jugador18;
                 inicpila(&jugador18);
-
                 Pila jugador28;
                 inicpila(&jugador28);
-
-                int i8;
-
-                apilar(&mazo8,1);
-                apilar(&mazo8,2);
-                apilar(&mazo8,3);
-                apilar(&mazo8,4);
-                apilar(&mazo8,5);
-                apilar(&mazo8,6);
-                apilar(&mazo8,7);
-                apilar(&mazo8,8);
-                apilar(&mazo8,9);
-                apilar(&mazo8,10);
-
-
-                /*for(i8=1;i8<11;i8++)
+                do
                 {
-
-                    apilar(&mazo8,&i8);
+                    leer(&mazo8);
+                    printf("\nDesea ingresar un dato?\n1 = SI\n0 = NO\nRespuesta: ");
+                    scanf("%i",&continuar8);
+                    printf("\n");
                 }
+                while(continuar8!=0);
+                printf("Mazo:\n");
                 mostrar(&mazo8);
-
-                /*do
-                {
-                    apilar(&mazo8,i8);
-                    i8=i8++;
-                }
-                while(i8<11);*/
-
-
-
                 while(!pilavacia(&mazo8))
                 {
                     apilar(&jugador18,desapilar(&mazo8));
-                    apilar(&jugador28,desapilar(&mazo8));
+                    if(!pilavacia(&mazo8))
+                    {
+                        apilar(&jugador28,desapilar(&mazo8));
+                    }
                 }
+                printf("Jugador 1:\n");
                 mostrar(&jugador18);
+                printf("Jugador 2:\n");
                 mostrar(&jugador28);
-
-
-
             }
             break;
             case 9:
@@ -636,6 +624,6 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.5\n");
+    printf("\nVersion 1.6\n");
     return 0;
 }

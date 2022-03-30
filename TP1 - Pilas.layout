@@ -2,9 +2,19 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
-	<File name="main.c" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+	<File name="pila.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="23582" topLine="63" />
+			<Cursor1 position="380" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="pila.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="0" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="main.c" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="-1" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="14810" topLine="65" />
 		</Cursor>
 		<Folding>
 			<Collapse line="37" />
@@ -12,25 +22,15 @@
 			<Collapse line="87" />
 			<Collapse line="114" />
 			<Collapse line="139" />
-			<Collapse line="165" />
-			<Collapse line="198" />
-			<Collapse line="232" />
-			<Collapse line="288" />
-			<Collapse line="339" />
-			<Collapse line="381" />
-			<Collapse line="424" />
-			<Collapse line="481" />
-			<Collapse line="537" />
+			<Collapse line="175" />
+			<Collapse line="208" />
+			<Collapse line="241" />
+			<Collapse line="276" />
+			<Collapse line="327" />
+			<Collapse line="368" />
+			<Collapse line="411" />
+			<Collapse line="468" />
+			<Collapse line="524" />
 		</Folding>
-	</File>
-	<File name="pila.c" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="0" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="pila.h" open="1" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="380" topLine="0" />
-		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

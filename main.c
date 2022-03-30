@@ -355,7 +355,6 @@ int main()
                     desapilar(&pilaA10);
                     desapilar(&pilaB10);
                 }
-
                 if(!pilavacia(&pilaA10)||!pilavacia(&pilaB10))
                 {
                     printf("Las pilas no son iguales\n");
@@ -578,22 +577,34 @@ int main()
             break;
             case 15:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //¿Cuál es la condición del siguiente ciclo? ¿Cuándo finaliza el ciclo? (Pila1, Pila2, y Descarte son pilas):
-
                 //IMAGEN
-       }
+                printf("*IMAGEN*\n\nwhile(!pilavacia(&Pila1))\n{\n    apilar(&Pila2, desapilar(&Descarte))\n}\n\n*FIN IMAGEN*\n");
+                //IMAGEN
+                printf("\nLa condicion es si la pila Pila1 esta vacia o no\n");
+                printf("\nEl ciclo no termina porque !pilavacia(&Pila1) no se altera nunca dentro del ciclo\n");
+            }
             break;
             case 16:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\n",ejercicio);
                 //¿Que realiza el siguiente código escrito en lenguaje C (Pila1, Aux y Result son pilas):
                 //IMAGEN
+                printf("*IMAGEN*\n\nwhile (!pilavacia(&Pila1))\n{\n    if (tope(&Pila1)==5)\n    {\n        apilar (&Aux, desapilar(&Pila1));\n        apilar (&Result, desapilar(&Aux));\n    }\n}\n\n*FIN IMAGEN*\n");
+                //IMAGEN
+                printf("\nMientras la Pila1 no este vacia, dentro del ciclo while se evalua si el tope de Pila1 es igual a 5.\n");
+                printf("\nSi es verdadero, desapila Pila1 y apila en Aux; y luego desapila Aux y apila en Result; y termina el ciclo.\n");
+                printf("\nSi es falso, termina el ciclo.\n");
+                printf("\nSe vuelve a ejecutar el ciclo.\n");
+                printf("\nSalvo que todos los elementos de la Pila1 sean 5, en algun momento el tope sera un numero distinto a 5.\n");
+                printf("\nAsi, el if no entrara al verdadero, por lo que nunca se desapilara la Pila1, y el tope siempre sera distinto.\n");
+                printf("\nAlli, el ciclo while se ejecutara infinitamente puesto que la Pila1 nunca se vaciara.\n");
             }
             break;
             case 17:
             {
-                printf("\nEJERCICIO %i\n",ejercicio);
+                printf("\nEJERCICIO %i\n\N",ejercicio);
                 //Para el ejercicio “Cargar por teclado una pila ORIGEN y pasar a la pila DISTINTO todos aquellos elementos que preceden al valor 5 (elementos entre el tope y el valor 5).
                 //No se asegura que exista algún valor 5”, se realizó el siguiente programa:
 
@@ -624,6 +635,6 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.6\n");
+    printf("\nVersion 1.7\n");
     return 0;
 }

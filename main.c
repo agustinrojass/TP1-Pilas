@@ -2,24 +2,25 @@
 #include <stdlib.h>
 #include "pila.h"
 
-int ejercicio1();
-int ejercicio2();
-int ejercicio3();
-int ejercicio4();
-int ejercicio5();
-int ejercicio6();
-int ejercicio7();
-int ejercicio8();
-int ejercicio9();
-int ejercicio10();
-int ejercicio11();
-int ejercicio12();
-int ejercicio13();
-int ejercicio14();
-int ejercicio15();
-int ejercicio16();
-int ejercicio17();
-int ejercicio18();
+//VER NO ELIMINAR DATOS
+void ejercicio1();
+void ejercicio2();
+void ejercicio3();
+void ejercicio4();
+void ejercicio5();
+void ejercicio6();
+void ejercicio7();
+void ejercicio8();
+void ejercicio9();
+void ejercicio10();
+void ejercicio11();
+void ejercicio12();
+void ejercicio13();
+void ejercicio14();
+void ejercicio15();
+void ejercicio16();
+void ejercicio17();
+void ejercicio18();
 int main()
 {
     int ejercicio;
@@ -150,10 +151,10 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 1.8\n");
+    printf("\nVersion 2.0\n");
     return 0;
 }
-int ejercicio1()
+void ejercicio1()
 {
     //Cargar desde el teclado una pila DADA con 5 elementos.
     //Pasar los tres primeros elementos que se encuentren en el tope a la pila AUX1 y los restantes a la pila AUX2, ambas pilas inicializadas.
@@ -184,7 +185,7 @@ int ejercicio1()
     printf("La pila aux2 es:");
     mostrar(&aux2);
 }
-int ejercicio2()
+void ejercicio2()
 {
     //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
     //Pasar todos los elementos de la pila ORIGEN a la pila DESTINO.
@@ -212,7 +213,7 @@ int ejercicio2()
     printf("La pila destino es:");
     mostrar(&destino);
 }
-int ejercicio3()
+void ejercicio3()
 {
     //Cargar desde teclado una pila DADA y pasar a la pila DISTINTOS todos aquellos elementos distintos al valor 8.
     char continuar;
@@ -239,7 +240,7 @@ int ejercicio3()
     printf("La pila cargada por el usuario sin los 8 es:");
     mostrar(&distintos);
 }
-int ejercicio4()
+void ejercicio4()
 {
     //Cargar desde el teclado la pila ORIGEN e inicializar en vacío la pila DESTINO.
     //Pasar los elementos de la pila ORIGEN a la pila DESTINO, pero dejándolos en el mismo orden.
@@ -264,7 +265,7 @@ int ejercicio4()
     printf("La copia de la pila cargada por el usuario es:");
     mostrar(&destino);
 }
-int ejercicio5()
+void ejercicio5()
 {
     //Cargar desde el teclado la pila DADA.
     //Invertir la pila de manera que DADA contenga los elementos cargados originalmente en ella, pero en orden inverso.
@@ -302,7 +303,7 @@ int ejercicio5()
     printf("La pila dada por el usuario en orden inverso es:");
     mostrar(&dada);
 }
-int ejercicio6()
+void ejercicio6()
 {
     //Pasar el primer elemento (tope) de la pila DADA a su última posición (base), dejando los restantes elementos en el mismo orden.
     char continuar;
@@ -337,7 +338,7 @@ int ejercicio6()
     printf("La pila dada por el usuario pasando el tope a la base es:");
     mostrar(&dada);
 }
-int ejercicio7()
+void ejercicio7()
 {
     //Pasar el último elemento (base) de la pila DADA a su primera posición (tope), dejando los restantes elementos en el mismo orden.
     char continuar;
@@ -372,7 +373,7 @@ int ejercicio7()
     printf("La pila dada por el usuario pasando la base a el tope es:");
     mostrar(&dada);
 }
-int ejercicio8()
+void ejercicio8()
 {
     //Repartir los elementos de la pila MAZO en las pilas JUGADOR1 y JUGADOR2 en forma alternativa.
     char continuar;
@@ -407,7 +408,7 @@ int ejercicio8()
     printf("Jugador 2:");
     mostrar(&jugador2);
 }
-int ejercicio9()
+void ejercicio9()
 {
     //Comparar la cantidad de elementos de las pilas A y B. Mostrar por pantalla el resultado.
     char continuarA,continuarB;
@@ -464,7 +465,7 @@ int ejercicio9()
         }
     }
 }
-int ejercicio10()
+void ejercicio10()
 {
     //Comparar las pilas A y B, evaluando si son completamente iguales (en cantidad de elementos, valores que contienen y posición de los mismos).
     //Mostrar por pantalla el resultado.
@@ -511,7 +512,7 @@ int ejercicio10()
         printf("Las pilas son iguales\n\n");
     }
 }
-int ejercicio11()
+void ejercicio11()
 {
     //Suponiendo la existencia de una pila MODELO que no esté vacía, eliminar de la pila DADA todos los elementos que sean iguales al tope de la pila MODELO.
     char continuar;
@@ -557,7 +558,7 @@ int ejercicio11()
     printf("La pila dada por el usuario sin los elementos iguales al valor del tope de la pila modelo es: ");
     mostrar(&dada);
 }
-int ejercicio12()
+void ejercicio12()
 {
     //Suponiendo la existencia de una pila MODELO (vacía o no), eliminar de la pila DADA todos los elementos que existan en MODELO.
     char continuar1,continuar2;
@@ -568,6 +569,8 @@ int ejercicio12()
     Pila aux;
     inicpila(&aux);
     Pila modeloAux;
+    Pila eliminados;
+    inicpila(&eliminados);
     inicpila(&modeloAux);
     printf("Ingrese los elementos de la pila modelo:\n\n");
     do
@@ -593,30 +596,29 @@ int ejercicio12()
     mostrar(&modelo);
     printf("La pila dada es:");
     mostrar(&dada);
-    while(!pilavacia(&dada))
+    while(!pilavacia(&modelo))
     {
-        while(!pilavacia(&modelo))
+        while(!pilavacia(&dada))
         {
             if(tope(&dada)==tope(&modelo))
             {
-                desapilar(&dada);
+                apilar(&eliminados,desapilar(&dada));
             }
-            apilar(&modeloAux,desapilar(&modelo));
+            else
+            {
+                apilar(&aux,desapilar(&dada));
+            }
         }
-        while(!pilavacia(&modeloAux))
+        apilar(&modeloAux,desapilar(&modelo));
+        while(!pilavacia(&aux))
         {
-            apilar(&modelo,desapilar(&modeloAux));
+            apilar(&dada,desapilar(&aux));
         }
-        apilar(&aux,desapilar(&dada));
-    }
-    while(!pilavacia(&aux))
-    {
-        apilar(&dada,desapilar(&aux));
     }
     printf("La pila dada sin los elementos de la pila modelo es:");
     mostrar(&dada);
 }
-int ejercicio13()
+void ejercicio13()
 {
     //Suponiendo la existencia de una pila LÍMITE, pasar los elementos de la pila DADA que sean mayores o iguales que el tope de LIMITE a la pila MAYORES, y los elementos que sean menores a la pila MENORES.
     char continuar;
@@ -674,7 +676,7 @@ int ejercicio13()
     printf("La pila con los elementos menores al tope de la pila limite es:");
     mostrar(&menores);
 }
-int ejercicio14()
+void ejercicio14()
 {
     //Determinar si la cantidad de elementos de la pila DADA es par. Si es par, pasar el elemento del tope de la pila AUX a la pila PAR y si es impar pasar el tope a la pila IMPAR.
     char continuar;
@@ -730,7 +732,7 @@ int ejercicio14()
         mostrar(&impar);
     }
 }
-int ejercicio15()
+void ejercicio15()
 {
     //¿Cuál es la condición del siguiente ciclo? ¿Cuándo finaliza el ciclo? (Pila1, Pila2, y Descarte son pilas):
     //IMAGEN
@@ -739,7 +741,7 @@ int ejercicio15()
     printf("\nLa condicion es si la pila Pila1 esta vacia o no\n");
     printf("\nEl ciclo no termina porque !pilavacia(&Pila1) no se altera nunca dentro del ciclo\n");
 }
-int ejercicio16()
+void ejercicio16()
 {
     //¿Que realiza el siguiente código escrito en lenguaje C (Pila1, Aux y Result son pilas):
     //IMAGEN
@@ -753,7 +755,7 @@ int ejercicio16()
     printf("\nAsi, el if no entrara al verdadero, por lo que nunca se desapilara la Pila1, y el tope siempre sera distinto.\n");
     printf("\nAlli, el ciclo while se ejecutara infinitamente puesto que la Pila1 nunca se vaciara.\n");
 }
-int ejercicio17()
+void ejercicio17()
 {
     //Para el ejercicio “Cargar por teclado una pila ORIGEN y pasar a la pila DISTINTO todos aquellos elementos que preceden al valor 5 (elementos entre el tope y el valor 5).
     //No se asegura que exista algún valor 5”, se realizó el siguiente programa:
@@ -767,7 +769,7 @@ int ejercicio17()
     //c. Reescribir el código para que resuelva adecuadamente el problema planteado.
     //d. Indicar los componentes del programa.
 }
-int ejercicio18()
+void ejercicio18()
 {
     //Dado el siguiente ciclo (Pila1, Pila2 y Descarte son pilas):
 

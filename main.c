@@ -1,8 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include "pila.h"
-
-//VER NO ELIMINAR DATOS
 void ejercicio1();
 void ejercicio2();
 void ejercicio3();
@@ -151,7 +149,7 @@ int main()
     }
     while(ejercicio!=0);
     printf("\nTP1 TERMINADO\n");
-    printf("\nVersion 2.1\n");
+    printf("\nVersion 2.2\n");
     return 0;
 }
 void ejercicio1()
@@ -197,7 +195,7 @@ void ejercicio2()
     do
     {
         leer(&origen);
-        printf("Desea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -225,7 +223,7 @@ void ejercicio3()
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -260,7 +258,7 @@ void ejercicio4()
     do
     {
         leer(&origen);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -292,7 +290,7 @@ void ejercicio5()
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -327,7 +325,7 @@ void ejercicio6()
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -360,7 +358,7 @@ void ejercicio7()
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -393,7 +391,7 @@ void ejercicio8()
     do
     {
         leer(&mazo);
-        printf("\nDesea ingresar otra carta?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otra carta? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -427,7 +425,7 @@ void ejercicio9()
     do
     {
         leer(&pilaA);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuarA);
         printf("\n");
@@ -437,7 +435,7 @@ void ejercicio9()
     do
     {
         leer(&pilaB);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuarB);
         printf("\n");
@@ -482,7 +480,7 @@ void ejercicio10()
     do
     {
         leer(&pilaA);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuarA);
         printf("\n");
@@ -492,7 +490,7 @@ void ejercicio10()
     do
     {
         leer(&pilaB);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuarB);
         printf("\n");
@@ -530,7 +528,7 @@ void ejercicio11()
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -571,7 +569,7 @@ void ejercicio12()
     do
     {
         leer(&modelo);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar2);
         printf("\n");
@@ -633,7 +631,7 @@ void ejercicio13()
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -668,22 +666,20 @@ void ejercicio13()
 }
 void ejercicio14()
 {
-    //Determinar si la cantidad de elementos de la pila DADA es par. Si es par, pasar el elemento del tope de la pila AUX a la pila PAR y si es impar pasar el tope a la pila IMPAR.
-    char continuar;
-    int paridad;
+    //Determinar si la cantidad de elementos de la pila DADA es par.
+    //Si es par, pasar el elemento del tope de la pila AUX a la pila PAR y si es impar pasar el tope a la pila IMPAR.
+    char continuar,paridad='i';
     Pila dada,aux,comparacion,par,impar;
     inicpila(&dada);
     inicpila(&aux);
     inicpila(&comparacion);
     inicpila(&par);
     inicpila(&impar);
-    apilar(&comparacion,-98929);
-    //Numero elegido arbitrariamente que es probable que el usuario no elija
     printf("Ingrese los elementos de la pila:\n\n");
     do
     {
         leer(&dada);
-        printf("\nDesea ingresar otro elemento?\ns = SI\nn = NO\nRespuesta: ");
+        printf("Desea ingresar otro elemento? s/n Respuesta: ");
         fflush(stdin);
         scanf("%c",&continuar);
         printf("\n");
@@ -691,19 +687,19 @@ void ejercicio14()
     while(continuar!='n');
     while(!pilavacia(&dada))
     {
-        if(tope(&aux)==tope(&comparacion))
+        if(paridad=='i')
         {
-            paridad=1;
+            paridad='p';
             apilar(&aux,desapilar(&dada));
         }
         else
         {
-            paridad=0;
+            paridad='i';
             apilar(&aux,desapilar(&dada));
             apilar(&comparacion,tope(&dada));
         }
     }
-    if(paridad==1)
+    if(paridad=='p')
     {
         printf("La pila dada es par\n");
         apilar(&par,tope(&aux));
@@ -721,53 +717,202 @@ void ejercicio14()
 void ejercicio15()
 {
     //¿Cuál es la condición del siguiente ciclo? ¿Cuándo finaliza el ciclo? (Pila1, Pila2, y Descarte son pilas):
-    //IMAGEN
-    printf("*IMAGEN*\n\nwhile(!pilavacia(&Pila1))\n{\n    apilar(&Pila2, desapilar(&Descarte))\n}\n\n*FIN IMAGEN*\n");
-    //IMAGEN
+    //INICIO IMAGEN
+    printf("while(!pilavacia(&Pila1))\n");
+    printf("    {\n");
+    printf("        apilar(&Pila2,desapilar(&Descarte));\n");
+    printf("    }\n");
+    //FIN IMAGEN
+    char enter;
+    printf("\nEnter para ver las respuestas:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA
     printf("\nLa condicion es si la pila Pila1 esta vacia o no\n");
-    printf("\nEl ciclo no termina porque !pilavacia(&Pila1) no se altera nunca dentro del ciclo\n");
+    printf("\nEl ciclo no termina porque !pilavacia(&Pila1) no se altera nunca dentro del ciclo\n\n");
 }
 void ejercicio16()
 {
     //¿Que realiza el siguiente código escrito en lenguaje C (Pila1, Aux y Result son pilas):
-    //IMAGEN
-    printf("*IMAGEN*\n\nwhile (!pilavacia(&Pila1))\n{\n    if (tope(&Pila1)==5)\n    {\n        apilar (&Aux, desapilar(&Pila1));\n        apilar (&Result, desapilar(&Aux));\n    }\n}\n\n*FIN IMAGEN*\n");
-    //IMAGEN
+    //INICIO IMAGEN
+    printf("while (!pilavacia(&Pila1))\n");
+    printf("{\n");
+    printf("if (tope(&Pila1)==5)\n");
+    printf("    {\n");
+    printf("        apilar(&Aux,desapilar(&Pila1));\n");
+    printf("        apilar (&Result, desapilar(&Aux));\n");
+    printf("    }\n");
+    printf("}\n");
+    //FIN IMAGEN
+    char enter;
+    printf("\nEnter para ver las respuestas:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA
     printf("\nMientras la Pila1 no este vacia, dentro del ciclo while se evalua si el tope de Pila1 es igual a 5.\n");
-    printf("\nSi es verdadero, desapila Pila1 y apila en Aux; y luego desapila Aux y apila en Result; y termina el ciclo.\n");
-    printf("\nSi es falso, termina el ciclo.\n");
-    printf("\nSe vuelve a ejecutar el ciclo.\n");
+    printf("\nSi es verdadero, desapila Pila1 y apila en Aux; y luego desapila Aux y apila en Result; y termina el if.\n");
+    printf("\nSi es falso, termina el if.\n");
+    printf("\nSe vuelve a ejecutar el ciclo while.\n");
     printf("\nSalvo que todos los elementos de la Pila1 sean 5, en algun momento el tope sera un numero distinto a 5.\n");
     printf("\nAsi, el if no entrara al verdadero, por lo que nunca se desapilara la Pila1, y el tope siempre sera distinto.\n");
-    printf("\nAlli, el ciclo while se ejecutara infinitamente puesto que la Pila1 nunca se vaciara.\n");
+    printf("\nEntonces, el ciclo while se ejecutara infinitamente puesto que la Pila1 nunca se vaciara.\n\n");
 }
 void ejercicio17()
 {
     //Para el ejercicio “Cargar por teclado una pila ORIGEN y pasar a la pila DISTINTO todos aquellos elementos que preceden al valor 5 (elementos entre el tope y el valor 5).
     //No se asegura que exista algún valor 5”, se realizó el siguiente programa:
-
-    // este programa carga por teclado una pila Origen y pasa a la pila Destino todos aquellos elementos que preceden el valor 5
-
-    //IMAGEN
-
+    //Este programa carga por teclado una pila Origen y pasa a la pila Destino todos aquellos elementos que preceden el valor 5
     //a. ¿Resuelve el problema planteado?
     //b. ¿Cuáles son los errores que encuentra?
     //c. Reescribir el código para que resuelva adecuadamente el problema planteado.
     //d. Indicar los componentes del programa.
-
-
+    //INICIO IMAGEN
+    printf("Pila Origen,Distinto;\n");
+    printf("inicpila(&Origen);\n");
+    printf("inicpila(&Distinto);\n");
+    printf("leer(&Origen);\n");
+    printf("if(!pilavacia(&Origen))\n");
+    printf("{\n");
+    printf("    while(tope(&Origen)!=5)\n");
+    printf("    {\n");
+    printf("        apilar(&Distinto,desapilar(&Origen));\n");
+    printf("    }\n");
+    printf("}\n");
+    //FIN IMAGEN
+    char enter;
+    printf("\nEnter para ver la respuesta A:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA INCISO A
+    printf("\nA: No, no resuelve el ejercicio planteado.\n");
+    printf("\nEnter para ver la respuesta B:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA INCISO B
+    printf("\nB: Los errores encontrados son:\n");
+    printf("- No se llama a la libreria de pilas\n");
+    printf("- Solo se puede cargar 1 elemento en la pila Origen.\n");
+    printf("- Si la pila no tiene al 5 como elemento, el while se ejecutara por siempre.\n");
+    printf("- Si la pila tiene un 5 como elemento, cuando entre al ciclo while, vera que la condicion es falsa, no apartara el 5,\n");
+    printf("y saldra del while sin comprobar si el resto de los elementos son 5 o no.\n");
+    printf("- El if deberia ir dentro del while, y las condiciones deberían estar invertidas.\n");
+    printf("\nEnter para ver la respuesta C:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA INCISO C
+    printf("\nC: Codigo reescrito:\n");
+    printf("#include <stdio.h>\n");
+    printf("#include <stdlib.h>\n");
+    printf("#include \"pila.h\"\n");
+    printf("int main()\n");
+    printf("{\n");
+    printf("    char continuar;\n");
+    printf("    Pila Origen,Distinto,aux;\n");
+    printf("    inicpila(&Origen);\n");
+    printf("    inicpila(&Distinto);\n");
+    printf("    inicpila(&aux);\n");
+    printf("    printf(\"Ingrese los elementos de la pila:\");\n");
+    printf("    do\n");
+    printf("    {\n");
+    printf("        leer(&Origen);\n");
+    printf("        printf(\"Desea ingresar otro elemento?\");\n");
+    printf("        printf(\"s = SI\");\n");
+    printf("        printf(\"n = NO\");\n");
+    printf("        printf(\"Respuesta:\");\n");
+    printf("        fflush(stdin);\n");
+    printf("        scanf(\"%%c\",&continuar);\n");
+    printf("    }\n");
+    printf("    while(continuar!='n');\n");
+    printf("    printf(\"La pila cargada por el usuario es:\");\n");
+    printf("    mostrar(&Origen);\n");
+    printf("    while(!pilavacia(&Origen))\n");
+    printf("    {\n");
+    printf("        if(tope(&Origen)!=5)\n");
+    printf("        {\n");
+    printf("            apilar(&Distinto,desapilar(&Origen));\n");
+    printf("        }\n");
+    printf("        else\n");
+    printf("        {\n");
+    printf("            apilar(&aux,desapilar(&Origen));\n");
+    printf("        }\n");
+    printf("    }\n");
+    printf("    printf(\"La pila cargada por el usuario sin los 5 es:\");\n");
+    printf("    mostrar(&Distinto);\n");
+    printf("}\n");
+    printf("\nEnter para ejecutar el programa reescrito:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //#include <stdio.h>
+    //#include <stdlib.h>
+    //#include "pila.h"
+    //int main()
+    {
+        char continuar;
+        Pila Origen,Distinto,aux;
+        inicpila(&Origen);
+        inicpila(&Distinto);
+        inicpila(&aux);
+        printf("Ingrese los elementos de la pila:\n\n");
+        do
+        {
+            leer(&Origen);
+            printf("Desea ingresar otro elemento? s/n Respuesta: ");
+            fflush(stdin);
+            scanf("%c",&continuar);
+        }
+        while(continuar!='n');
+        printf("\nLa pila cargada por el usuario es:");
+        mostrar(&Origen);
+        while(!pilavacia(&Origen))
+        {
+            if(tope(&Origen)<5)
+            {
+                apilar(&Distinto,desapilar(&Origen));
+            }
+            else
+            {
+                apilar(&aux,desapilar(&Origen));
+            }
+        }
+        printf("La pila cargada por el usuario sin los elementos que preceden al 5 es:");
+        mostrar(&Distinto);
+    }
+    printf("\nEnter para ver la respuesta D:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA INCISO D
+    printf("\nD: El programa usa:\n");
+    printf("- La libreria de pilas\n");
+    printf("- 3 pilas\n");
+    printf("- 1 variable de tipo char\n");
+    printf("- Un ciclo while, y una condicion if dentro el ciclo while\n");
+    printf("\n");
 }
 void ejercicio18()
 {
     //Dado el siguiente ciclo (Pila1, Pila2 y Descarte son pilas):
-
-    //IMAGEN
-
     //a. ¿Cuál es la condición del ciclo? Explique con sus palabras
     //b. ¿Cuales son los posibles estados de ambas pilas al finalizar el ciclo?
-
+    //INICIO IMAGEN
+    printf("while ((!pilaVacia(&Pila1))&&(!pilaVacia(&Pila2)))\n");
+    printf("    {\n");
+    printf("        apilar(&Descarte,desapilar(&Pila1));\n");
+    printf("        apilar(&Descarte,desapilar(&Pila2));\n");
+    printf("    }\n");
+    //FIN IMAGEN
+    char enter;
+    printf("\nEnter para ver la respuesta A:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA INCISO A
+    printf("\nA: La condicion del ciclo while es que tanto la pila1 como la pila2 tengan elementos, es decir, que no esten vacias.\n");
+    printf("\nEnter para ver la respuesta B:");
+    fflush(stdin);
+    scanf("%c",&enter);
+    //RESPUESTA INCISO B
+    printf("\nB: Los estados posibles al finalizar el ciclo son:\n");
+    printf("pila1 > vacia y pila2 > no vacia\n");
+    printf("pila1 > no vacia y pila2 > vacia\n");
+    printf("pila1 > vacia y pila2 > vacia\n\n");
 
 }
-
-
-
